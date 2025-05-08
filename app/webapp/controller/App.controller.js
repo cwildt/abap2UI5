@@ -482,6 +482,38 @@ sap.ui.define("z2ui5/Storage", ["sap/ui/core/Control", "sap/ui/util/Storage"], (
         }
       },
       events: {
+         "loaded": {
+          parameters: {
+            type: {
+              type: "string",
+            },
+            prefix: {
+              type: "string",
+            },
+            key: {
+              type: "string",
+            },
+            value: {
+              type: "any",
+            }
+          }
+        }
+        "stored": {
+          parameters: {
+            type: {
+              type: "string",
+            },
+            prefix: {
+              type: "string",
+            },
+            key: {
+              type: "string",
+            },
+            value: {
+              type: "any",
+            }
+          }
+        }
         "finished": {
           parameters: {
             type: {
@@ -501,6 +533,14 @@ sap.ui.define("z2ui5/Storage", ["sap/ui/core/Control", "sap/ui/util/Storage"], (
       }
     },
 
+		getStoredValue: function(type, prefix, key) {
+      let oStorage = new Storage(type, prefix);
+      return oStorage.get(storageKey);
+		},
+		setStoredValue: function(type, prefix, key, value) {
+      let oStorage = new Storage(type, prefix);
+      oStorage.put(key, value);
+		},
     async renderer(_, oControl) {
       let storageType = oControl.getProperty("type");
       let storageKeyPrefix = oControl.getProperty("prefix");
