@@ -2,7 +2,7 @@ name: create_app2abap
 
 on:
   push:
-    branches: [main]
+    branches: [main, storage]
 
 jobs:
   create_app2abap:
