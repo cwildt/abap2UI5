@@ -504,6 +504,38 @@ CLASS z2ui5_cl_app_app_js IMPLEMENTATION.
              `        }` && |\n| &&
              `      },` && |\n| &&
              `      events: {` && |\n| &&
+             `         "loaded": {` && |\n| &&
+             `          parameters: {` && |\n| &&
+             `            type: {` && |\n| &&
+             `              type: "string",` && |\n| &&
+             `            },` && |\n| &&
+             `            prefix: {` && |\n| &&
+             `              type: "string",` && |\n| &&
+             `            },` && |\n| &&
+             `            key: {` && |\n| &&
+             `              type: "string",` && |\n| &&
+             `            },` && |\n| &&
+             `            value: {` && |\n| &&
+             `              type: "any",` && |\n| &&
+             `            }` && |\n| &&
+             `          }` && |\n| &&
+             `        }` && |\n| &&
+             `        "stored": {` && |\n| &&
+             `          parameters: {` && |\n| &&
+             `            type: {` && |\n| &&
+             `              type: "string",` && |\n| &&
+             `            },` && |\n| &&
+             `            prefix: {` && |\n| &&
+             `              type: "string",` && |\n| &&
+             `            },` && |\n| &&
+             `            key: {` && |\n| &&
+             `              type: "string",` && |\n| &&
+             `            },` && |\n| &&
+             `            value: {` && |\n| &&
+             `              type: "any",` && |\n| &&
+             `            }` && |\n| &&
+             `          }` && |\n| &&
+             `        }` && |\n| &&
              `        "finished": {` && |\n| &&
              `          parameters: {` && |\n| &&
              `            type: {` && |\n| &&
@@ -523,6 +555,14 @@ CLASS z2ui5_cl_app_app_js IMPLEMENTATION.
              `      }` && |\n| &&
              `    },` && |\n| &&
              `` && |\n| &&
+             ` getStoredValue: function(type, prefix, key) {` && |\n| &&
+             `      let oStorage = new Storage(type, prefix);` && |\n| &&
+             `      return oStorage.get(storageKey);` && |\n| &&
+             ` },` && |\n| &&
+             ` setStoredValue: function(type, prefix, key, value) {` && |\n| &&
+             `      let oStorage = new Storage(type, prefix);` && |\n| &&
+             `      oStorage.put(key, value);` && |\n| &&
+             ` },` && |\n| &&
              `    async renderer(_, oControl) {` && |\n| &&
              `      let storageType = oControl.getProperty("type");` && |\n| &&
              `      let storageKeyPrefix = oControl.getProperty("prefix");` && |\n| &&
@@ -780,6 +820,8 @@ CLASS z2ui5_cl_app_app_js IMPLEMENTATION.
              `    },` && |\n| &&
              `    setControl() {` && |\n| &&
              `      let table = z2ui5.oView.byId(this.getProperty("MultiInputId"));` && |\n| &&
+             |\n|.
+    result = result &&
              `      if (!table) {` && |\n| &&
              `        try {` && |\n| &&
              `          // table = Core.byId(Element.getElementsByName(this.getProperty("MultiInputName"))[0].id.replace('-inner', ''));` && |\n| &&
@@ -820,8 +862,6 @@ CLASS z2ui5_cl_app_app_js IMPLEMENTATION.
              `        },` && |\n| &&
              `        addedTokens: {` && |\n| &&
              `          type: "Array"` && |\n| &&
-             |\n|.
-    result = result &&
              `        },` && |\n| &&
              `        removedTokens: {` && |\n| &&
              `          type: "Array"` && |\n| &&
