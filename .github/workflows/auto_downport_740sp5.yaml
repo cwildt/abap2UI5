@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  auto_downport:
+  auto_downport_740sp5:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
