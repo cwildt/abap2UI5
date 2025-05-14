@@ -4,6 +4,11 @@
     },
     "dependencies": [
       {
+        "url": "https://github.com/open-abap/open-abap-core",
+        "folder": "/deps",
+        "files": "/src/**/*.*"
+      },
+      {
         "url": "https://github.com/abapedia/steampunk-2305-api-intersect-740",
         "folder": "/deps",
         "files": "/src/**/*.*"
