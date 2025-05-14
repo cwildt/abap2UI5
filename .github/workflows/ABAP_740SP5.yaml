@@ -2,7 +2,7 @@ name: ABAP_740SP5
 
 on:
   push:
-    branches: [740sp5]
+    branches: [740]
 
 permissions:
   contents: read
@@ -14,9 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        ref: 740sp5
+        ref: 740
     - uses: actions/setup-node@v3
       with:
         node-version: 20
     - run: npm ci
-    - run: npx abaplint .github/abaplint/abap_740sp5.jsonc
+    - run: npx abaplint .github/abaplint/abap_740.jsonc
