@@ -33,6 +33,6 @@ jobs:
     - name: Push Changes
       uses: ad-m/github-push-action@v0.6.0
       with:
-        github_token: ${{ secrets.GITHUB_TaOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: 702
         force: true
