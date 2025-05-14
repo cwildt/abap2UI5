@@ -25,7 +25,6 @@
       "method_implemented_twice": true,
       "parser_error": true,
       "superclass_final": true,
-      "unknown_types": true,
-      "xml_consistency": true
+      "unknown_types": true
     }
   }
