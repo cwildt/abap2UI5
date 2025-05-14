@@ -10,7 +10,7 @@
     "auto_downport_740": "abaplint --fix .github/abaplint/abap_740.jsonc && npm run syfixes && cp -r src node/downport_740 &&  cp -f .github/abaplint/abap_740.jsonc abaplint.jsonc && npm run abaplintpathfix",      
     "auto_app2abap": "node .github/app2abap/trans2abap.js",
     "auto_abaplint": "npx abaplint .github/abaplint/auto_abaplint_fix.jsonc --fix",
-    "auto_transpile": "rm -rf node/output && cp node/srv/*.abap node/downport_740 && abap_transpile ./node/setup/abap_transpile.json",
+    "auto_transpile": "rm -rf node/output && cp node/srv/*.abap node/downport_702 && abap_transpile ./node/setup/abap_transpile.json",
     "rename": "npm ci && abaplint .github/abaplint/rename_test.jsonc --rename",
     "express": "node node/srv/express.mjs",
     "unit": "echo RUNNING && node node/output/index.mjs"
