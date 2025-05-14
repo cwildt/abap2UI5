@@ -1,11 +1,11 @@
-name: auto_downport_740sp5
+name: auto_downport_740
 
 on:
   push:
     branches: [main]
 
 jobs:
-  auto_downport_740sp5:
+  auto_downport_740:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -18,7 +18,7 @@ jobs:
         node-version: '16'
 
     - run: npm ci
-    - run: npm run auto_downport_740sp5
+    - run: npm run auto_downport_740
 
     - name: Commit Changes
       run: |
@@ -27,12 +27,12 @@ jobs:
         git add .
         git commit -m "Downport changes"
 
-    - name: Switch to Branch 740sp5
-      run: git checkout -b 740sp5
+    - name: Switch to Branch 740
+      run: git checkout -b 740
 
     - name: Push Changes
       uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: 740sp5
+        branch: 740
         force: true
