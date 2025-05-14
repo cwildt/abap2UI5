@@ -1,4 +1,4 @@
-name: auto_downport_702
+name: auto_downport_740sp5
 
 on:
   push:
