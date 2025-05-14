@@ -1,4 +1,4 @@
-name: auto_downport
+name: auto_downport_702
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         node-version: '16'
 
     - run: npm ci
-    - run: npm run auto_downport
+    - run: npm run auto_downport_702
 
     - name: Commit Changes
       run: |
@@ -33,6 +33,6 @@ jobs:
     - name: Push Changes
       uses: ad-m/github-push-action@v0.6.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TaOKEN }}
         branch: 702
         force: true
